@@ -1,40 +1,41 @@
-# CCNA (Cisco Certified Network Associate) 学習ログ
+# CCNA (Cisco Certified Network Associate) 学習記録
 
-2023年3月から6月にかけて習得したネットワーク技術の詳細。
-理論学習に加え、Packet Tracerによる大規模トポロジの構築を継続的に実施。
+2023年度の学習のメインテーマとして、ネットワークの基礎から実機構成までを体系的に学習した記録。
+単なる資格取得目的ではなく、実務に耐えうる「パケットレベルでの動作理解」を目標とした。
 
----
+## 1. 学習ロードマップ
+- **Q1-Q2**: OSI参照モデル、TCP/IPプロトコルスタックの徹底理解
+- **Q3**: L2/L3スイッチング・ルーティング技術の習得（Cisco IOS操作含む）
+- **Q4**: 実機（Packet Tracer / CML）によるトポロジー構築とトラブルシューティング演習
 
-## 🛠 重点習得トピック & 検証ログ
+## 2. 重点学習項目
 
-### 1. L2 Switching & Loop Avoidance
-- **STP/RSTP**:
-  - ルートブリッジ選出プロセスの検証。`priority` 値の調整による最適ルートの固定化。
-  - PortFast, BPDU Guard の設定によるエッジポートのセキュリティと収束高速化。
-- **VLAN/Trunking**:
-  - VTPによる管理効率化と、DTPの無効化（`switchport nonegotiate`）によるセキュリティ向上。
-  - Native VLAN不一致時の挙動確認。
+### 2.1 ネットワーク基礎
+- **IPアドレス設計**: サブネットマスク、CIDR、VLSMを用いた効率的なアドレス配分。
+- **カプセル化**: L2フレーム（Ethernet II）からL4セグメント（TCP/UDP）までのヘッダ解析。
 
-### 2. IP Routing & Infrastructure
-- **OSPFv2 (Deep Dive)**:
-  - Neighbor/Adjacency確立のトラブルシューティング（Hello/Dead Timer, Area ID, Subnetの一致確認）。
-  - Wildcard Maskを用いた詳細なネットワーク広告。
-  - パッシブインターフェースの設定による不要なLSA配布の抑制。
-- **FHRP (HSRP)**:
-  - `preempt` 設定によるアクティブルータ切り戻し動作の確認。
-  - IP SLAを用いたトラッキングによる上位回線障害時の自動切り替え。
+### 2.2 レイヤ2技術 (Switching)
+- **VLAN / Trunking**: IEEE 802.1Qのカプセル化とVTPのリスク管理。
+- **STP (Spanning Tree Protocol)**: 802.1D / 802.1w (RSTP) の収束プロセスとルートブリッジ選定アルゴリズムの検証。
+- **EtherChannel**: LACPを用いた帯域拡張と冗長性の確保。
 
-### 3. Network Security & IP Services
-- **ACL (Access Control List)**:
-  - 名前付き拡張ACLを用いた、特定のポート（HTTP/SSH等）のみを許可するステートフルに近い制御。
-- **NAT/PAT**:
-  - `ip nat inside source list` を用いた多対一変換のデバッグ（`show ip nat translations`）。
+### 2.3 レイヤ3技術 (Routing)
+- **スタティックルーティング**: フローティングスタティックによる冗長化。
+- **OSPF (Open Shortest Path First)**: 
+  - Helloパケットによるネイバー確立プロセス。
+  - エリア設計（Single Area / Multi Area）とLSAタイプの違い。
+  - コスト計算に基づく経路選定。
 
----
+### 2.4 インフラストラクチャ・サービス
+- **DHCP / DNS**: サーバー・クライアント間のやり取りのパケットキャプチャ確認。
+- **NAT / PAT**: プライベートIPからグローバルIPへの変換プロセス。
+- **ACL (Access Control List)**: 標準/拡張ACLを用いたトラフィックフィルタリング。
 
-## 📈 学習の推移
-- **2023.03 - 04**: OSI参照モデルの徹底理解とL2基礎。
-- **2023.05**: ルーティングプロトコルの詳細検証。複雑なトポロジでの疎通確認。
-- **2023.06**: セキュリティ、自動化、管理サービスの総仕上げと模擬試験の反復。
+## 3. 実機検証 (Lab Work)
+検証したトポロジーの詳細は `./labs/` ディレクトリ配下に格納。
+- [Lab-01: 基本的なVLAN間ルーティング](./labs/vlan-inter-routing.md)
+- [Lab-02: OSPFによるマルチエリアネットワーク](./labs/ospf-multi-area.md)
 
-**Final Assessment:** Passed CCNA (2023.07)
+## 4. 総括
+2023年12月中旬までに主要な技術要素の検証を完了。
+最終試験に向け、12月後半は activity.log にある通り、これまでの検証結果のレビューと弱点克服に注力した。
