@@ -1,13 +1,14 @@
-# Advanced Architecture & AWS SAP Study Log
+# Advanced Infrastructure Architecture Design
 
-AWS Certified Solutions Architect - Professional 相当の、複雑な組織要件や大規模移行に関する設計手法。
+インフラ構成のコード化（Terraform）を前提とした、モダンなクラウドネイティブアーキテクチャの設計記録。
 
----
+## 1. CI/CD パイプラインの統合 (GitHub Actions)
+2025年の主要な取り組みとして、手動による `terraform apply` を廃止し、プルリクエストベースの自動デプロイフローを確立。
 
-## 🛠 重点習得トピック
-- **Multi-Account Strategy**: AWS OrganizationsとControl Towerを用いたガバナンスとガードレールの実装。
-- **Complex Network Design**: Transit Gatewayを用いたハブ＆スポーク構成、Direct Connectによるハイブリッド環境設計。
-- **Business Continuity**: リージョン間レプリケーション、複雑なRTO/RPO要件に基づくDR（災害復旧）シナリオの策定。
-- **Migration & Modernization**: AWS Application Migration Serviceを用いた大規模移行、マイクロサービスへの移行戦略。
+### 実装されたワークフロー例
+- **OIDC 連携**: AWS と GitHub Actions を `OpenID Connect` でセキュアに接続。
+- **Plan Automation**: `terraform plan` の結果を PR のコメントに自動投稿。
 
-**Final Assessment:** Passed AWS SAP (2025.05)
+## 2. コンテナ基盤の運用設計 (ECS on Fargate)
+- **可観測性**: `awslogs` ドライバを用いた CloudWatch Logs への集約。
+- **スケーリング**: CPU/メモリ使用率に基づいた Target Tracking Scaling の実装。

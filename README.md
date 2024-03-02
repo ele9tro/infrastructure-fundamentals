@@ -1,49 +1,33 @@
-# Infrastructure Fundamentals / インフラ設計・構築の変遷
+# Infrastructure Fundamentals & Advanced Design
 
-オンプレミスからマルチクラウド、Infrastructure as Code (IaC) まで、モダンなシステム基盤を構築するための技術習得プロセスを記録したリポジトリです。
+このリポジトリは、インフラエンジニアとしての基礎習得から、AWSを中心とした高度なアーキテクチャ設計、IaC（Infrastructure as Code）の実装に至るまでの学習と検証の軌跡を記録したものです。
 
----
+## 📈 Activity Summary
+GitHubのコントリビューションと連動した、年度ごとの活動実績：
+- 2023年: ネットワーク基礎の徹底。CCNA取得。
+- 2024年: Linux高度管理とクラウドへの移行。LinuC Lv2/3取得、Terraform実践。
+- 2025年: AWS設計の高度化とCI/CDの自動化。SAA Mastery、Advanced Arch設計。
 
-## 🛠 Technical Expertise / 技術領域
+## 📂 Contents & Roadmap
 
-本リポジトリでの学習を通じて、以下の技術領域をカバーしています。
+### Phase 1: Foundations (2023)
+ネットワークとOSの基礎固め。
+- [CCNA Study Notes](./ccna_study.md): ネットワークプロトコルとルータ・スイッチの基本構成。
 
-* **Networking**: L2/L3の基礎から、AWS Transit Gatewayを用いた複雑なハイブリッド環境の設計。
-* **OS/Server**: Linuxカーネルのチューニング、LVS/Keepalivedによる高可用性（HA）構成の構築。
-* **Cloud Architecture**: AWS Well-Architectedフレームワークに基づく、セキュリティ・信頼性・コスト最適化を両立した設計。
-* **Automation**: Terraformを用いたインフラの構成管理、およびプロビジョニングの自動化。
+### Phase 2: Linux Mastery & Cloud Entry (2024)
+サーバー管理の深化と、パブリッククラウドの導入。
+- [LinuC Level 2 & 3 Notes](./linuc_advanced.md): エンタープライズLinux管理とセキュリティ堅牢化。
+- [AWS Cloud Practitioner Study](./aws_clf_study.md): クラウド概念とAWS基本サービスの理解。
+- [IaC with Terraform](./iac_terraform.md): AWSリソースのコード管理とモジュール化設計の実装。
 
----
+### Phase 3: Advanced Architecture (2025)
+設計の高度化と運用自動化の追求。
+- [AWS Solutions Architect Associate](./aws_saa_study.md): 高可用性・耐障害性を備えたアーキテクチャの設計検証。
+- [Advanced Architecture Design](./advanced_arch.md): コンテナ基盤（ECS）やCI/CD（GitHub Actions）を組み合わせたモダン構成。
 
-## 🎓 Certification & Learning Path / 資格と学習の歩み
-
-各資格取得の**1ヶ月前**には理論学習を完了し、実務およびハンズオンへ移行するサイクルを徹底しています。
-
-| 取得時期 (Passed) | 資格 (Certification) | 学習・実践の重点 (Key Focus) |
-| :--- | :--- | :--- |
-| **2023.07** | **CCNA** | OSI参照モデル, TCP/IP, VLAN/STP, ルーティングプロトコル(OSPF)の理解 |
-| **2023.10** | **AWS SAA** | クラウドネイティブな3層アーキテクチャ, 疎結合なシステム設計 (SQS/SNS) |
-| **2024.02** | **LinuC Lv2** | Linuxカーネル管理, ネットワーク構成, ブートプロセスの深掘り |
-| **2024.03** | **LinuC Lv3** | 高可用性クラスタ構築 (304), 負荷分散、ディレクトリサービス(LDAP) |
-| **2024.09** | **AWS CLF** | クラウドの経済性、責任共有モデル、コンプライアンスの再定義 |
-| **2025.05** | **AWS SAP** | 組織間の統合、大規模移行戦略、複雑なDR(災害復旧)シナリオの策定 |
-
----
-
-## 📂 Repository Structure / リポジトリ構成
-
-- [ccna_study.md](./ccna_study.md) : ネットワーク基礎・ルーティング・スイッチング。
-- [aws_saa_study.md](./aws_saa_study.md) : AWSコアサービス（EC2, VPC, S3, RDS）の設計手法。
-- [linuc_advanced.md](./linuc_advanced.md) : Linux内部構造、サーバ冗長化、パフォーマンスチューニング。
-- [iac_terraform.md](./iac_terraform.md) : HCLを用いたAWSリソースのコード化と一貫性の担保。
-- [aws_sap_study.md](./aws_sap_study.md) : 複数アカウント管理、先進的なセキュリティ・ガバナンス設計。
+## 📊 Operation Logs
+- [Full Activity Log](./activity.log): 年度別のマイルストーンとコミット件数の詳細。
 
 ---
-
-## 📊 Performance Metrics / 学習の継続性
-
-- **活動時間**: 平日(水・木)・休日 19:00 - 22:00
-- **コミット数**: 年平均 450+ commits (2023年3月以降継続)
-
----
-Developed by **ele9tro**
+**Username: ele9tro**
+本リポジトリは、一貫した学習リズム（土日祝集中・平日週1）に基づき、継続的にアップデートされています。
