@@ -1,13 +1,16 @@
-# LinuC Level 2 & Level 3 技術習得ログ
+# LinuC Level 2 & 3 実践管理・設計記録
 
-Linuxカーネル、ネットワーク構成、および高可用性システムの構築・運用技術を習得。
+本ドキュメントは、2024年第1四半期のLinuC上位認定取得に向けた学習および実機検証の記録である。
+（※資格取得の15日前である2024年3月初頭に全内容をFix済み）
 
----
+## 1. LinuC Level 2 重点検証項目 (2024年1月完了)
+- ネットワークストレージ(iSCSI)、LVMによる高度なディスク管理。
+- Keepalived/LVSを用いたWebサーバー群の高可用性設計。
 
-## 🛠 重点習得トピック
-- **System Maintenance**: カーネルコンパイル、カスタムドライバの導入、ブートプロセスの詳細解析。
-- **Network Configuration**: Iptables/Nftablesを用いたファイアウォール構築、VPNトンネリングの構成。
-- **High Availability**: Keepalived + LVSによるロードバランサ構築、Pacemaker/Corosyncによるクラスタリング。
-- **Security & Performance**: OpenLDAPによるディレクトリサービス構築、Nginx/Apacheのチューニング。
+## 2. LinuC Level 3 重点検証項目 (2024年3月初頭完了)
+- OpenLDAPによるディレクトリサービス構築と、SambaによるWindows/Linux混合環境のID管理統合。
+- SSH証明書認証、LUKS、Auditdを用いたエンタープライズレベルのセキュリティ堅牢化。
 
-**Final Assessment:** Passed LinuC Lv2 (2024.02), Lv3 (2024.03)
+## 3. 取得スケジュール（目標）
+- LinuC Level 2: 2024年2月中旬
+- LinuC Level 3: 2024年3月中旬
